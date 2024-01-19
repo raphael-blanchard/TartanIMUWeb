@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel = "icon" href = "assets/title_image.png" type = "image/x-icon"> -->
+        
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ViSafe: Vision-enabled Safety for High-speed Detect and Avoid">
+  <meta name="keywords" content="DAA, Aviation, Shared Airspace, Control Barrier Functions, ACAS, Safety, Detection, Avoidance">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta property="og:image" content="assets/Thumbnail.png" />         -->
+  <title>ViSafe: Vision-enabled Safety for High-speed Detect and Avoid</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://theairlab.org/visafe">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">ViSafe: Vision-enabled Safety for High-speed<br>Detect and Avoid</h1>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <a href="https://parvkpr.github.io/">Parv Kapoor</a><sup>*</sup>,</span>
+            <span class="author-block">
+                <a href="https://www.linkedin.com/in/ian-higgins-53957718a">Ian Higgins</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://nik-v9.github.io/">Nikhil Keetha</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.jaypatrikar.me/">Jay Patrikar</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/zelinye">Zelin Ye</a>,</span>
+            <span class="author-block">
+              <a href="https://shockwaveHe.github.io/">Yao He</a>,</span>
+            <br>
+            <span class="author-block">
+              <a href="https://www.ivancisneros.com/">Ivan Cisneros</a>,</span>
+            <span class="author-block">
+              <a href="http://www.huyaoyu.com/">Yaoyu Hu</a>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~cliu6/">Changliu Liu</a>,</span>
+            <span class="author-block">
+              <a href="https://eskang.github.io/">Eunsuk Kang</a>,</span>
+            <span class="author-block">
+              <a href="https://theairlab.org/team/sebastian/">Sebastian Scherer</a></span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">Carnegie Mellon University</a>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="assets/ViSafe.pdf"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2312.02126"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/jWLI-OFp3qU"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Thread Link. -->
+              <span class="link-block">
+                <a href="https://x.com/Nik__V__/status/1731840557553496410?s=20"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Thread</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/spla-tam/SplaTAM"
+                   class="external-link button is-normal ">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Demo Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/spla-tam/SplaTAM#demo"
+                   class="external-link button is-normal">
+                  <span class="icon">
+                      <i class="fa fa-basketball-ball"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span> -->
+              <!-- Hugging Face Demo Link.
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/TheProjectsGuy/AnyLoc"
+                   class="external-link button is-normal">
+                  <span class="icon">
+                      <i class="fa fa-face-smiling-hands"></i>
+                  </span>
+                  <span>HF Demo</span>
+                  </a>
+              </span> -->
+
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal" disabled="true">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+      
+        <div class="column has-text-centered">
+          <div class="content">
+            <video id="s1_recon" autoplay controls muted loop playsinline height="100%">
+              <source src="./data/splash.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        </div>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        <span>ViSafe demonstrates</span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            To-Do
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <a id="overview_video"></a>
+          <iframe
+            src="./data/">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!--/ Paper video. -->
+</section>
+
+<section class="hero">
+  <div class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <h2 class="title is-3">Video</h2>
+      <div class="publication-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jWLI-OFp3qU?si=Ba4g6Io7ywE7wmqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Example Result</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+  <div class="columns is-centered">
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <video id="s2_recon" autoplay controls muted loop playsinline height="100%">
+        <source src="./data/result.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+
+  </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(function() {
+  var screenWidth = $(window).width();
+  if (screenWidth >= 800) {
+    $('#gpt-video-1').attr('autoplay', 'autoplay');
+  }
+  if (screenWidth >= 800) {
+    $('#gpt-video-2').attr('autoplay', 'autoplay');
+  }
+  if (screenWidth >= 800) {
+    $('#click-query-icl').attr('autoplay', 'autoplay');
+  }
+});
+</script>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>
+      @article{kapoor24demonstrating,
+        title={Demonstrating ViSafe: Vision-enabled Safety for High-speed Detect and Avoid},
+        author={Kapoor, Parv and Higgins, Ian and Keetha, Nikhil and Patrikar, Jay and Ye, Zelin and He, Yao and Cisneros, Ivan and Hu, Yaoyu and Liu, Changliu and Kang, Eunsuk and Scherer, Sebastian},
+        journal={arXiv preprint},
+        year={2024}
+      }
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website adapted from the Nerfies templates, which is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            If you use the <a href="https://github.com/castacks/visafe">source code</a> of this website,
+            please also link back to the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in your footer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
