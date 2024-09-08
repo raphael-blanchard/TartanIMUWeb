@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Runs</title>
+    <style>
+        .run {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .back-button {
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const filteredRuns = JSON.parse(localStorage.getItem('filteredRuns'));
+            const runsContainer = document.getElementById('runs-container');
+            if (filteredRuns) {
+                filteredRuns.forEach((run, index) => {
+                    const runDiv = document.createElement('div');
+                    runDiv.className = 'run';
+                    runDiv.innerHTML = `<h3>Run ${index + 1}</h3><p>${run}</p>`;
+                    runsContainer.appendChild(runDiv);
+                });
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Filtered Runs</h1>
+    <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+    <div id="runs-container"></div>
+</body>
+</html>
