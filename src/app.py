@@ -53,10 +53,5 @@ def filter_metadata():
     return {"runs": runs}
 
 
-@app.route("/runs")
-def runs():
-    return render_template("runs.html")
-
-
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

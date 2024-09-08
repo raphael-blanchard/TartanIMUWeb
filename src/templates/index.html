@@ -38,6 +38,7 @@
   <script src="../static/js/bulma-carousel.min.js"></script>
   <script src="../static/js/bulma-slider.min.js"></script>
   <script src="../static/js/index.js"></script>
+  <script src="../static/js/filter.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
@@ -243,6 +244,85 @@ TODO: add video content here
 <!--
 TODO: add interactive graphs/plots/utilities here
 -->
+
+
+<!--
+<section class="section" id="filter">
+<div class="hero-body">
+<div class="container is-max-desktop">
+  <h2 class="title is-3">Filter Betty Dataset</h2>
+  <form id="addfilterform">
+      <div class="block">
+          <h3 class="subtitle">Add a filter</h2>
+          <label for="attribute">YAML Attribute:</label>
+          <select id="attribute" name="attribute">
+              <option value="">Select an attribute</option>
+          </select>
+          <button type="button" onclick="addYamlAttribute()">Add sub-attribute</button>
+          <p id="allattributes"></p>
+      </div>
+
+      <!- - conditionally display this - ->
+      <div id="transformation-section" style="display: none;" class="block">
+          <h3 class="subtitle">Apply function to data (Optional)</h3>
+          <div>
+              <label for="transformation">Transformation:</label>
+              <select id="transformation" name="transformation" value="none">
+                  <option value="none">None</option>
+                  <option value="len">Python Function: len()</option>
+              </select>
+          </div>
+      </div>
+      <div class="block">
+        <h3 class="subtitle">Filter criteria</h3>
+        <label for="filtertype">Type:</label>
+        <select id="filtertype" name="filtertype" value="exact">
+            <option value="exact">Exact Value</option>
+            <option value="range">Range</option>
+            <option value="set">Set of Values</option>
+        </select>
+        <div id="exact" class="">
+            <label for="exactvalue">Enter exact value:</label>
+            <input type="text" id="exactvalue" name="exactvalue">
+        </div>
+        <div id="range" class="hidden">
+            <div>
+                <label for="rangebegin">Enter range begin:</label>
+                <input type="text" id="rangebegin" name="rangebegin">
+                <label for="rangebegininclusive">Inclusive?</label>
+                <input type="checkbox" id="rangebegininclusive" name="rangebegininclusive">
+            </div>
+            <div>
+                <label for="rangeend">Enter range end:</label>
+                <input type="text" id="rangeend" name="rangeend">
+                <label for="rangeendinclusive">Inclusive?</label>
+                <input type="checkbox" id="rangeendinclusive" name="rangeendinclusive">
+            </div>
+        </div>
+        <div id="set" class="hidden">
+            <label for="setvalue">Enter set of possible values:</label>
+            <input type="text" id="setvalue" name="setvalue">
+            <button type="button" onclick="addSetValue()">Add value</button>
+            <p id="setvalues"></p>
+        </div>
+        <div>
+            <input type="submit" value="Add filter">
+        </div>
+      </div>
+  </form>
+  <form id="sendfilterform" class="block">
+      <h2>All filters:</h2>
+      <ul id="filterlist" ></ul>
+      <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+</section>
+-->
+
+<section class="hero is-light" id="viz">
+
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
