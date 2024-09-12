@@ -8,6 +8,8 @@ charset-normalizer==3.3.2
 click==8.1.7
 cryptography==43.0.0
 Flask==3.0.3
+Flask-Cors==5.0.0
+Flask-RangeRequest==0.0.2
 fsspec==2024.6.1
 funcy==2.0
 google-api-core==2.19.1
