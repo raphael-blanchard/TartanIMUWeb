@@ -113,9 +113,25 @@ body {
 .publication-body img {
 }
 
-#viziframe {
+#vizblock {
   width: 100%;
-  height: 75vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#viz-left-column {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+#viz-right-column {
+  width: 35%;
+  margin-left: auto;
+}
+
+#camera-carousel {
+  overflow: hidden;
 }
 
 .results-carousel {

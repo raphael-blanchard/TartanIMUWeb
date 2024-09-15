@@ -35,9 +35,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="../static/js/fontawesome.all.min.js"></script>
-  <script src="../static/js/bulma-carousel.min.js"></script>
-  <script src="../static/js/bulma-slider.min.js"></script>
-  <script src="../static/js/index.js"></script>
   <script src="../static/js/filter.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -324,8 +321,40 @@ TODO: add interactive graphs/plots/utilities here
 <section class="section" id="viz">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Visualizations</h2>
+    <div id="vizblock">
+      <div id="viz-left-column">
+        <div id="camera-viewer" class="mb-4">
+          <div id="camera-carousel" class="carousel">
+            <div class="item-1">
+              <img src="../static/data/00006400.png" alt="Camera Image 1">
+            </div>
+            <div class="item-2">
+              <img src="../static/data/00018501.png" alt="Camera Image 2">
+            </div>
+          </div>
+        </div>
+
+        <div id="lidar-viewer" class="mb-4">
+          <div id="lidar-container"></div>
+        </div>
+      </div>
+
+      <div id="viz-right-column">
+        <div id="plot-viewer">
+          <h3 class="title is-4">Dynamics</h3>
+          <div id="plot-container"></div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/bulma-carousel.min.js"></script>
+    <script src="../static/js/bulma-slider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PCDLoader.js"></script>
+    <script src="../static/js/index.js"></script>
     <!-- <iframe id="viziframe" src="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap"></iframe> -->
-    <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fmyawsbucketmprw.s3.us-west-2.amazonaws.com%2Fall_sensors_for_so_verytcut_2023-01-07-VEH8-LVMS-RUN-6_0.mcap">See visualizations in Foxglove</a>
+    <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fmyawsbucketmprw.s3.us-west-2.amazonaws.com%2Fall_sensors_for_so_verytcut_2023-01-07-VEH8-LVMS-RUN-6_0.mcap">See complete visualizations in Foxglove</a>
+    <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
     <!-- <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=http%3A%2F%2F127.0.0.1%3A5000%2Frosbag.mcap">See visualizations in Foxglove</a> -->
   </div>
 </section>

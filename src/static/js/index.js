@@ -1,78 +1,58 @@
-window.HELP_IMPROVE_VIDEOJS = false;
 
-var INTERP_BASE = "./static/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
+// Initialize the Camera viewer
+bulmaCarousel.attach('#camera-carousel', {
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  infinite: true,
+});
 
-var interp_images = [];
-function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
+// Initialize the Lidar viewer
+const scene = new THREE.Scene();
+const parent = document.getElementById('vizblock');
+const camera = new THREE.PerspectiveCamera(75, 1 / 0.5, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+
+renderer.setSize(parent.offsetWidth*0.6, parent.offsetWidth*0.3);
+document.getElementById('lidar-container').appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+const loader = new THREE.PCDLoader();
+
+loader.load('../static/data/00008467.pcd', function(points) {
+  points.material = new THREE.ShaderMaterial({
+    uniforms: {
+      bboxMin: {
+        value: points.geometryboundingBox.min
+      },
+      bboxMax: {
+        value: points.geometry.boundingBox.max
+      }
+    },
+    vertexShader: `
+      void main() {
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = 1.0;
+        vColor = color;
+      }
+    `,
+  });
+
+
+  scene.add(points);
+  camera.position.set(0, -30, 30);
+  controls.update();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
   }
-}
+  animate();
+});
 
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
-}
-
-
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-
-    });
-
-    var options = {
-			slidesToScroll: 1,
-			slidesToShow: 3,
-			loop: true,
-			infinite: true,
-			autoplay: false,
-			autoplaySpeed: 3000,
-    }
-
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-
-    // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
-    	// Add listener to  event
-    	carousels[i].on('before:show', state => {
-    		console.log(state);
-    	});
-    }
-
-    // Access to bulmaCarousel instance of an element
-    var element = document.querySelector('#my-element');
-    if (element && element.bulmaCarousel) {
-    	// bulmaCarousel instance is available as element.bulmaCarousel
-    	element.bulmaCarousel.on('before-show', function(state) {
-    		console.log(state);
-    	});
-    }
-
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
-    preloadInterpolationImages();
-
-    $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
-    });
-    setInterpolationImage(0);
-    $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
-    bulmaSlider.attach();
-
-})
+window.addEventListener('resize', function() {
+  const parent = document.getElementById('vizblock');
+  camera.aspect = parent.offsetWidth / parent.offsetHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(parent.offsetWidth*0.6, parent.offsetWidth*0.3);
+});
