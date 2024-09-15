@@ -18,21 +18,31 @@ document.getElementById('lidar-container').appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 const loader = new THREE.PCDLoader();
 
-loader.load('../static/data/00008467.pcd', function(points) {
+const point_func = function(points) {
+  points.geometry.computeBoundingBox();
   points.material = new THREE.ShaderMaterial({
     uniforms: {
       bboxMin: {
-        value: points.geometryboundingBox.min
+        value: points.geometry.boundingBox.min
       },
       bboxMax: {
         value: points.geometry.boundingBox.max
-      }
+      },
     },
     vertexShader: `
+      uniform vec3 bboxMin;
+      uniform vec3 bboxMax;
+      varying vec3 vUv;
       void main() {
+        vUv.z = (position.z - bboxMin.z) / (bboxMax.z - bboxMin.z);
         gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         gl_PointSize = 1.0;
-        vColor = color;
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vUv;
+      void main() {
+        gl_FragColor = vec4(sqrt(sqrt(vUv.z)), 1.0 - sqrt(vUv.z), 1.0, 1.0);
       }
     `,
   });
@@ -48,7 +58,9 @@ loader.load('../static/data/00008467.pcd', function(points) {
     renderer.render(scene, camera);
   }
   animate();
-});
+}
+
+loader.load('../static/data/00008467.pcd', point_func);
 
 window.addEventListener('resize', function() {
   const parent = document.getElementById('vizblock');
