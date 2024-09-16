@@ -161,3 +161,5 @@ cython_debug/
 
 # Custom
 secrets.json
+.DS_Store
+static/rosbag
