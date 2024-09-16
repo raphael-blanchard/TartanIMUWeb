@@ -7,6 +7,7 @@ bulmaCarousel.attach('#camera-carousel', {
 });
 
 // Initialize the Lidar viewer
+console.log("Initializing Lidar viewer");
 const scene = new THREE.Scene();
 const parent = document.getElementById('vizblock');
 const camera = new THREE.PerspectiveCamera(75, 1 / 0.5, 0.1, 1000);
@@ -60,7 +61,7 @@ const point_func = function(points) {
   animate();
 }
 
-loader.load('../static/data/00008467.pcd', point_func);
+loader.load('./assets/00008467.pcd', point_func);
 
 window.addEventListener('resize', function() {
   const parent = document.getElementById('vizblock');
