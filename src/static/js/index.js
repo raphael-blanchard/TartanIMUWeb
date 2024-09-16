@@ -12,7 +12,7 @@ const parent = document.getElementById('vizblock');
 const camera = new THREE.PerspectiveCamera(75, 1 / 0.5, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 
-renderer.setSize(parent.offsetWidth*0.6, parent.offsetWidth*0.3);
+renderer.setSize(parent.offsetWidth*0.465, parent.offsetWidth*0.465*0.5);
 document.getElementById('lidar-container').appendChild(renderer.domElement);
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -66,5 +66,5 @@ window.addEventListener('resize', function() {
   const parent = document.getElementById('vizblock');
   camera.aspect = parent.offsetWidth / parent.offsetHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(parent.offsetWidth*0.6, parent.offsetWidth*0.3);
+  renderer.setSize(parent.offsetWidth*0.465, parent.offsetWidth*0.465*0.5);
 });

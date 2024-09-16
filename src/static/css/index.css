@@ -116,21 +116,31 @@ body {
 #vizblock {
   width: 100%;
   display: flex;
-  flex-direction: row;
-}
-
-#viz-left-column {
-  width: 60%;
-  display: flex;
   flex-direction: column;
 }
 
-#viz-right-column {
-  width: 35%;
-  margin-left: auto;
+#viz-row {
+  display: flex;
+  flex-direction: row;
+}
+
+#plot-viewer {
+  width: 100%;
 }
 
 #camera-carousel {
+  overflow: hidden;
+}
+
+#camera-viewer {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+#lidar-viewer {
+  width: 46.5%;
+  margin-left: auto;
   overflow: hidden;
 }
 
