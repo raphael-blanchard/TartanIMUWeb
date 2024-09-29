@@ -61,11 +61,44 @@ const point_func = function(points) {
   animate();
 }
 
-loader.load('./assets/00008467.pcd', point_func);
-
 window.addEventListener('resize', function() {
   const parent = document.getElementById('vizblock');
   camera.aspect = parent.offsetWidth / parent.offsetHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(parent.offsetWidth*0.465, parent.offsetWidth*0.465*0.5);
 });
+
+
+let CURRENT_RUN = 'grun33';
+const set_run = (grun) => {
+  CURRENT_RUN = grun;
+  for (let run of ['grun33', 'grun16', 'grun20', 'grun37', 'grun44', 'grun48']) {
+    const node = document.getElementById(`track-select-button-${run}`);
+    if (node) node.classList.remove('active-track');
+  }
+  if (grun == 'grun33') {
+    loader.load('./assets/00008467.pcd', point_func);
+    Plotly.newPlot('myDiv', grun33_traces, grun33_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun33/00006400.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun33/00018501.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'Las Vegas Motor Speedway';
+  } else if (grun == 'grun16') {
+    loader.load('./assets/00019329.pcd', point_func);
+    Plotly.newPlot('myDiv', grun16_traces, grun16_layout);
+    document.getElementById('camera-image-1').src = 'static/data/grun16/00018501.png';
+    document.getElementById('camera-image-2').src = 'static/data/grun16/00006400.png';
+    document.getElementById(`track-select-button-${grun}`).classList.add('active-track');
+    document.getElementById('current-track').textContent = 'GRUN 16';
+  } else if (grun == 'grun20') {
+
+  } else if (grun == 'grun37') {
+
+  } else if (grun == 'grun44') {
+
+  } else { // assume grun48
+
+  }
+}
+
+set_run(CURRENT_RUN);

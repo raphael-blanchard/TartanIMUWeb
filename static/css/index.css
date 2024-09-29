@@ -113,6 +113,39 @@ body {
 .publication-body img {
 }
 
+#track-select-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#track-select-row {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  align-items: center;
+}
+
+.track-select-button {
+  margin: 5px;
+  width: 80px;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  align-items: center;
+}
+
+.active-track {
+  background-color: #fbe5ff;
+}
+
+.track-icon {
+  width: 65px;
+}
+
 #vizblock {
   width: 100%;
   display: flex;
