@@ -430,16 +430,14 @@
 <section class="section is-light" id="foxglove viz">
   <div class="container is-max-desktop content">
     <h1 class="title is-3">HD Maps</h1>
-    <!-- Temporarily removed until can find good public host for larger pcds -->
-    <!-- <p id="percep-description">
+    <p id="percep-description">
       🗺️<em>
         <span class="text-emphasize" style="color: #4983db;">MAP EXPLORATION</span>
         : Pan around our HD maps<br />Menu > Tools > Navigation to change movement pattern
       </em>
-    </p> -->
-    <div>
-      <!-- <iframe src="potree-viewer.html" width="100%" height="500px"></iframe> -->
-      <img src="assets/lvms_map.png" alt="HD Pointcloud Map"/>
+    </p>
+    <div id="map-viewer">
+      <iframe src="potree-viewer.html" width="100%" height="500px"></iframe>
     </div>
   </div>
 </section>
@@ -449,7 +447,7 @@
     <h1 class="title is-3">ROS2 Visualization</h1>
     <!-- Foxglove -->
     <div class="button-wrapper center">
-      <a href="https://app.foxglove.dev/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-snippet%2Fgrun-48-snippet_0.mcap%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DLbSP6zwaMHk0YgQuixPW%252F20250514%252Fna-east-1%252Fs3%252Faws4_request%26X-Amz-Date%3D20250514T045351Z%26X-Amz-Expires%3D604800%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3D25701928155d30a0ccf82c10e0d4204ac68683c2b6ae1d259d447c65f28fbe7c&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.000345000Z" target="_blank" class="custom-button">
+      <a href="https://app.foxglove.dev/micah-nye-1/view?ds=remote-file&ds.url=https%3A%2F%2Fairlab-share-01.andrew.cmu.edu%3A9000%2Fbetty%2Fgrun-48-2023-06-18-VEH8-MONZA-RUN-0%2Fmcap%2Fgrun-48-snippet%2Fgrun-48-snippet_0.mcap&layoutId=lay_0dUxYWH4IFfsL4qa&time=2023-06-18T08%3A06%3A11.000345000Z" target="_blank" class="custom-button">
         <div class="button-content">
           <div>
             <video controls autoplay loop muted playsinline style="pointer-events: none;">
@@ -459,12 +457,12 @@
           <div>
             <img src="assets/foxglove_logo.svg" alt="Icon" class="button-icon" />
             <span class="button-text">Check out the data replay features using Foxglove! (Click Me)</span>
+            <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
           </div>
         </div>
       </a>
     </div>
     <div style="text-align:center">
-      <p class="is-size-7">Note: Foxglove account required. Visualization is currently very slow.</p>
     </div>
   </div>
 </section>

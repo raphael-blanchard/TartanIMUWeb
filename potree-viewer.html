@@ -82,14 +82,15 @@
         scene.view.lookAt(...lookAt);
 
         // Add an axes helper to the scene
-        let axesHelper = new THREE.AxesHelper(1);
+        let axesHelper = new THREE.AxesHelper(10);
         axesHelper.position.set(0, 0, 0);
         scene.scene.add(axesHelper);
       });
     }
 
     // Example usage: Load a point cloud
-    const metadataPath = "./static/data/maps/potree_output/metadata.json";
+	// const metadataPath = "./static/data/maps/potree_output/metadata.json";
+	const metadataPath = "https://airlab-share-01.andrew.cmu.edu:9000/betty/tmp/working_map/metadata.json"
     const position = [
 			14.45566380588144,
 			640.6886325329785,
