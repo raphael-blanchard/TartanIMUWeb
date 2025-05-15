@@ -314,15 +314,6 @@
 </section>
 -->
 
-<!-- <section class="section" id="disclaimer">
-  <div class="container is-max-desktop content">
-      <div>
-        <h1 class="title is-3">⚠️ Disclaimer</h1>
-        <p class="is-size-10">As post-processing continues, we currently are providing a small subset of the data with all but the Goodwood track. This includes 6 runs, encompassing high- & low-speed and single- & multi-agent scenarios, as well as those with loss of traction. Please see our preliminary easy-access visualizations of perception and dynamics data below.</p>
-      </div>
-  </div>
-</section> -->
-
 <section class="section" id="viz" >
   <div class="container is-max-desktop content">
     <div id="track-select-outline">
@@ -466,27 +457,52 @@
     </div>
   </div>
 </section>
-<!-- <section id="pointcloud-viewer">
-  <iframe src="potree-viewer.html" width="100%" height="100%"></iframe>
-</section> -->
 
 <section class="section is-light" id="sensor-specs">
   <div class="container is-max-desktop content">
-    <h2 class="title is-3">System</h2>
+    <h2 class="title is-3">Platform Sensors & Rates</h2>
     <div style="text-align: center;">
-      <img src="assets/betty_sensors.svg" alt="AV21 (betty) sensors" width="70%"/>
-      <img src="assets/betty_sensors_key.svg" alt="AV21 (betty) sensors key" width="70%"/>
+      <img src="assets/betty_sensors.svg" alt="AV21 (betty) sensors" width="80%"/>
+      <div id="sensor-select-row">
+        <div id="sensor-select-button-lidar" class="sensor-select-button" onclick='set_sensor("lidar")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_lidar.svg">
+        </div>
+        <div id="sensor-select-button-camera" class="sensor-select-button" onclick='set_sensor("camera")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_camera.svg">
+        </div>
+        <div id="sensor-select-button-radar" class="sensor-select-button" onclick='set_sensor("radar")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_radar.svg">
+        </div>
+        <div id="sensor-select-button-novatel" class="sensor-select-button" onclick='set_sensor("novatel")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_novatel.svg">
+        </div>
+        <div id="sensor-select-button-vectornav" class="sensor-select-button" onclick='set_sensor("vectornav")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_vectornav.svg">
+        </div>
+        <div id="sensor-select-button-kistler" class="sensor-select-button" onclick='set_sensor("kistler")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_kistler.svg">
+        </div>
+        <div id="sensor-select-button-autonomy" class="sensor-select-button" onclick='set_sensor("autonomy")'>
+          <img class="sensor-icon" src="static/images/betty_sensors_autonomy.svg">
+        </div>
+      </div>
+      <div class="table-container">
+        <table id="sensor-table">
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Rate [Hz]</th>
+              <th>Description</th>
+              <th>ROS Message Type</th>
+            </tr>
+          </thead>
+          <tbody id="sensor-table-body">
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
-
-
-<!-- <section class="section is-light" id="data-format">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3">Data Format</h2>
-
-  </div>
-</section> -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

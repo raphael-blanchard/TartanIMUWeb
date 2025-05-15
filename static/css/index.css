@@ -161,6 +161,7 @@ section.is-light {
   }
 }
 
+/* Track Selection */
 #track-select-outline {
   border: 2px solid rgb(54, 53, 53); /* Black outline */
   border-radius: 10px; /* Rounded corners */
@@ -233,6 +234,123 @@ section.is-light {
   font-weight: bold; /* Make text bold */
   color: #333; /* Dark gray text color */
 }
+
+/* Sensor selection */
+#sensor-select-outline {
+  border: 2px solid rgb(54, 53, 53); /* Black outline */
+  border-radius: 10px; /* Rounded corners */
+  padding: 1rem; /* Add some padding inside the outline */
+  margin-bottom: 2rem; /* Add spacing below the outline */
+}
+
+#sensor-select-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+
+  /* TBD if I want stickiness */
+  /* position: sticky;
+  top: 0;
+  padding: 10px 16px;
+  background: white;
+  z-index: 1000; */
+}
+
+#sensor-select-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: center;
+  width: fit-content;
+  gap: 0px; /* Add spacing between buttons */
+}
+
+.sensor-select-button {
+  margin: 5px;
+  /* width: 120px; Keep the width unchanged */
+  /* height: 300px; */
+  /* background-color: #0000ff; */
+  /* background-color: transparent; */
+  cursor: pointer;
+  border: none;
+  border-radius: 12px; /* More rounded corners */
+  text-align: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 4px; /* Add padding for better spacing */
+}
+
+/* Hover effect */
+.sensor-select-button:hover {
+  /* background-color: #ff0000; Light gray background on hover */
+  transform: scale(1.15); /* Slightly scale up the button */
+  /* box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); Enhanced shadow on hover */
+}
+
+/* Active (clicked) state */
+.sensor-select-button:active {
+  transform: scale(0.95); /* Slightly scale down when clicked */
+}
+
+.active-sensor {
+  transform: scale(1.15); /* Slightly scale up the button */
+}
+
+.sensor-icon {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+/* table */
+#sensor-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  word-wrap: break-word;
+}
+
+#sensor-table th,
+#sensor-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  /* font-family: monospace; Helps with alignment */
+  vertical-align: top;
+}
+
+#sensor-table th:nth-child(1),
+#sensor-table td:nth-child(1) {
+  width: 300px;
+}
+
+#sensor-table th:nth-child(2),
+#sensor-table td:nth-child(2) {
+  width: 100px;
+}
+
+#sensor-table th:nth-child(3),
+#sensor-table td:nth-child(3) {
+  width: 350px;
+}
+
+#sensor-table th:nth-child(4),
+#sensor-table td:nth-child(4) {
+  min-width: 400px;
+  white-space: normal; /* Allow wrapping */
+  word-wrap: break-word;
+}
+
+#sensor-table thead {
+  background-color: #cfcccc;
+}
+.table-container {
+  overflow-x: auto;
+}
+/* time series */
 
 #timeseries-div {
   position: relative; /* Ensure the container is a positioning context */
