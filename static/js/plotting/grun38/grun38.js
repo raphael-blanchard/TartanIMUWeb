@@ -1,24 +1,3 @@
-var traces = [
-
-];
-        const layout = {
-            xaxis: { title: 'Time (s)' },
-            yaxis: { title: 'y [varying]' }
-        };
-        updatemenus: [{
-                buttons: [
-                    {
-                        label: 'Line',
-                        method: 'update',
-                        args: [{'mode': 'lines'}, {'title': 'Lines Mode'}]  // Update mode to lines
-                    },
-                    {
-                        label: 'Scatter',
-                        method: 'update',
-                        args: [{'mode': 'markers'}, {'title': 'Scatter Mode'}]  // Update mode to scatter
-                    }
-                ],
-                direction: 'down',
-                showactive: true,
-            }],
-        
+version https://git-lfs.github.com/spec/v1
+oid sha256:7952993e3806793050c181546e0b0bcca1bb9bff72f74609158498b04b8d729c
+size 787

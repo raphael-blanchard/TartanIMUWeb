@@ -1,0 +1,2 @@
+static/data/dynamics/**/*.js filter=lfs diff=lfs merge=lfs -text
+static/js/plotting/**/*.js filter=lfs diff=lfs merge=lfs -text
